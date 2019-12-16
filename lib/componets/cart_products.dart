@@ -71,11 +71,7 @@ class Single_cart_product extends StatelessWidget {
     return Card(
       child: ListTile(
         // =================== LEADING =====================
-        leading: new Image.asset(
-          cart_prod_picture,
-          width: 80.0,
-          height: 80.0,
-        ),
+        leading: new Image.asset(cart_prod_picture),
 
         //  ================= TITLE ========================
         title: new Text(cart_prod_name),
@@ -127,9 +123,15 @@ class Single_cart_product extends StatelessWidget {
         ),
         trailing: new Column(
           children: <Widget>[
-            new IconButton(icon: Icon(Icons.arrow_drop_up), onPressed: (){},),
+            new IconButton(
+              icon: Icon(Icons.arrow_drop_up),
+              onPressed: () {},
+            ),
             new Text('$cart_prod_qty'),
-            // new IconButton(icon: Icon(Icons.arrow_right), onPressed: (){},)
+            new IconButton(
+              icon: Icon(Icons.arrow_right),
+              onPressed: () {},
+            )
           ],
         ),
       ),
