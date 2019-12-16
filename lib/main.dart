@@ -33,14 +33,15 @@ class _homePageState extends State<HomePage> {
         autoplayDuration: Duration(milliseconds: 4000),
         dotSize: 4.0,
         indicatorBgPadding: 6.0,
-        dotBgColor: const Color(0x00000000),
+        // dotBgColor: const Color(0x00000000),
+        dotBgColor: Colors.transparent,
       ),
     );
 
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.green,
-          title: Text('eSopping'),
+          title: Text('eShopping'),
           actions: <Widget>[
             new IconButton(
               icon: Icon(Icons.shopping_cart),
@@ -130,7 +131,7 @@ class _homePageState extends State<HomePage> {
             child: new Text('Recent Products'),),
 
             Container(
-              height: 320.0,
+              height: 360.0,
               child: Product(),
             )
           ],
@@ -138,19 +139,4 @@ class _homePageState extends State<HomePage> {
   }
 
   void doSomeThing() {}
-}
-
-class BodyWidget extends StatelessWidget {
-  final Color color;
-
-  BodyWidget(this.color);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 100.0,
-      color: color,
-      alignment: Alignment.center,
-    );
-  }
 }

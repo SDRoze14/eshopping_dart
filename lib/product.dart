@@ -20,11 +20,29 @@ class _ProductState extends State<Product> {
       "old_price": 1000,
       "new_price": 850,
     },
+    {
+      "name": "Jeans",
+      "picture": "images/resent_product/jeans.jpg",
+      "old_price": 1500,
+      "new_price": 1000,
+    },
+    {
+      "name": "Table",
+      "picture": "images/resent_product/table.jpg",
+      "old_price": 8000,
+      "new_price": 6590,
+    },
+    {
+      "name": "Coke",
+      "picture": "images/resent_product/coke.jpg",
+      "old_price": 60,
+      "new_price": 45,
+    },
   ];
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      itemCount: product_list.length,
+      itemCount: 4,
       primary: false,
       shrinkWrap: true,
       gridDelegate:
@@ -78,7 +96,7 @@ class Single_prod extends StatelessWidget {
               title: Text(
                 '\u0E3F$prod_new_price',
                 style:
-                    TextStyle(color: Colors.red, fontWeight: FontWeight.w800),
+                    TextStyle(color: Colors.green, fontWeight: FontWeight.w800),
               ),
               subtitle: Text(
                 '\u0E3F$prod_old_price',
