@@ -9,7 +9,8 @@ class _Cart_productsState extends State<Cart_products> {
   var product_on_the_cart = [
     {
       "name": "NIKE",
-      "picture": "images/resent_product/nike.jpg",
+      // "picture": "images/resent_product/nike.jpg",
+      "picture": "images/slide_home/sofa.jpg",
       "price": 2000,
       "size": "62",
       "color": "Black",
@@ -69,71 +70,75 @@ class Single_cart_product extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: ListTile(
-        // =================== LEADING =====================
-        leading: new Image.asset(cart_prod_picture),
+      child: Row(
+        children: <Widget>[
+          new SizedBox(
+            width: (MediaQuery.of(context).size.width) / 5 * 4.3,
+            child: ListTile(
+              // =================== LEADING =====================
+              leading: new Image.asset(cart_prod_picture),
 
-        //  ================= TITLE ========================
-        title: new Text(cart_prod_name),
+              //  ================= TITLE ========================
+              title: new Text(cart_prod_name),
 
-        // ================= SUBTITLE ======================
-        subtitle: new Column(
-          children: <Widget>[
-            // ====================== Row inside the colum ========================
-            new Row(
-              children: <Widget>[
-                // ======================== Size =========================
-                Padding(
-                  padding: const EdgeInsets.all(0.0),
-                  child: new Text("Size:"),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: new Text(
-                    cart_prod_size,
-                    style: TextStyle(color: Colors.green),
+              // ================= SUBTITLE ======================
+              subtitle: new Column(
+                children: <Widget>[
+                  // ====================== Row inside the colum ========================
+                  new Row(
+                    children: <Widget>[
+                      // ======================== Size =========================
+                      Padding(
+                        padding: const EdgeInsets.all(0.0),
+                        child: new Text("Size:"),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: new Text(
+                          cart_prod_size,
+                          style: TextStyle(color: Colors.green),
+                        ),
+                      ),
+                      // ===================== Color ====================
+                      new Padding(
+                        padding: const EdgeInsets.fromLTRB(20.0, 8.0, 8.0, 8.0),
+                        child: new Text("Color:"),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: new Text(
+                          cart_prod_color,
+                          style: TextStyle(color: Colors.green),
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-                // ===================== Color ====================
-                new Padding(
-                  padding: const EdgeInsets.fromLTRB(20.0, 8.0, 8.0, 8.0),
-                  child: new Text("Color:"),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: new Text(
-                    cart_prod_color,
-                    style: TextStyle(color: Colors.green),
+                  // ======================= Price ==============================
+                  new Container(
+                    alignment: Alignment.topLeft,
+                    child: new Text(
+                      '\u0E3F${cart_prod_price}',
+                      style: TextStyle(
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.green),
+                    ),
                   ),
-                ),
-              ],
-            ),
-            // ======================= Price ==============================
-            new Container(
-              alignment: Alignment.topLeft,
-              child: new Text(
-                '\u0E3F${cart_prod_price}',
-                style: TextStyle(
-                    fontSize: 17.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.green),
+                ],
               ),
             ),
-          ],
-        ),
-        trailing: new Column(
-          children: <Widget>[
-            new IconButton(
-              icon: Icon(Icons.arrow_drop_up),
-              onPressed: () {},
-            ),
-            new Text('$cart_prod_qty'),
-            new IconButton(
-              icon: Icon(Icons.arrow_right),
-              onPressed: () {},
+          ),
+          new SizedBox(
+            width: 49.0,
+            child: new Column(
+                children: <Widget>[
+                  new IconButton(icon: Icon(Icons.arrow_drop_up), onPressed: () {}),
+                  new Text("$cart_prod_qty"),
+                  new IconButton(icon: Icon(Icons.arrow_drop_down), onPressed: () {})
+                ],
             )
-          ],
-        ),
+          )
+        ],
       ),
     );
   }

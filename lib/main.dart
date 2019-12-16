@@ -76,62 +76,62 @@ class _homePageState extends State<HomePage> {
   int _current = 0;
   @override
   Widget build(BuildContext context) {
-   Widget image_carousel = new Column(
-     children: [
-       CarouselSlider(
-         items: child,
-         autoPlay: true,
-         autoPlayAnimationDuration: Duration(milliseconds: 1000),
+  //  Widget image_carousel = new Column(
+  //    children: [
+  //      CarouselSlider(
+  //        items: child,
+  //        autoPlay: true,
+  //        autoPlayAnimationDuration: Duration(milliseconds: 1000),
          
-         enlargeCenterPage: true,
-         aspectRatio: 2.0,
-         onPageChanged: (index) {
-           setState(() {
-             _current = index;
-           });
-         },
-       ),
-       Row(
-         mainAxisAlignment: MainAxisAlignment.center,
-         children: map<Widget>(
-           imageList,
-           (index, i) {
-             return Container(
-               width: 20.0,
-               height: 8.0,
-               margin: EdgeInsets.symmetric(vertical: 10.0,horizontal: 2.0),
-               decoration: BoxDecoration(
-                 shape: BoxShape.rectangle,
-                 color: _current == index
-                 ? Colors.green
-                 : Color.fromRGBO(0, 0, 0, 0.4),
-               ),
-             );
-           }
-         ),
-       )
-     ],
-   );
-    // Widget image_carusel = new Container(
-    //   height: 200.0,
-    //   child: new Carousel(
-    //     boxFit: BoxFit.cover,
-    //     images: [
-    //       AssetImage('images/slide_home/fashion.jpg'),
-    //       AssetImage('images/slide_home/men.jpg'),
-    //       AssetImage('images/slide_home/shoe.jpg'),
-    //       AssetImage('images/slide_home/sofa.jpg'),
-    //       AssetImage('images/slide_home/veget.jpg'),
-    //     ],
-    //     autoplay: false,
-    //     animationCurve: Curves.fastOutSlowIn,
-    //     autoplayDuration: Duration(milliseconds: 4000),
-    //     dotSize: 4.0,
-    //     indicatorBgPadding: 6.0,
-    //     // dotBgColor: const Color(0x00000000),
-    //     dotBgColor: Colors.transparent,
-    //   ),
-    // );
+  //        enlargeCenterPage: true,
+  //        aspectRatio: 2.0,
+  //        onPageChanged: (index) {
+  //          setState(() {
+  //            _current = index;
+  //          });
+  //        },
+  //      ),
+  //      Row(
+  //        mainAxisAlignment: MainAxisAlignment.center,
+  //        children: map<Widget>(
+  //          imageList,
+  //          (index, i) {
+  //            return Container(
+  //              width: 20.0,
+  //              height: 8.0,
+  //              margin: EdgeInsets.symmetric(vertical: 10.0,horizontal: 2.0),
+  //              decoration: BoxDecoration(
+  //                shape: BoxShape.rectangle,
+  //                color: _current == index
+  //                ? Colors.green
+  //                : Color.fromRGBO(0, 0, 0, 0.4),
+  //              ),
+  //            );
+  //          }
+  //        ),
+  //      )
+  //    ],
+  //  );
+    Widget image_carousel = new Container(
+      height: 200.0,
+      child: new Carousel(
+        boxFit: BoxFit.cover,
+        images: [
+          AssetImage('images/slide_home/fashion.jpg'),
+          AssetImage('images/slide_home/men.jpg'),
+          AssetImage('images/slide_home/shoe.jpg'),
+          AssetImage('images/slide_home/sofa.jpg'),
+          AssetImage('images/slide_home/veget.jpg'),
+        ],
+        autoplay: false,
+        animationCurve: Curves.fastOutSlowIn,
+        autoplayDuration: Duration(milliseconds: 4000),
+        dotSize: 4.0,
+        indicatorBgPadding: 6.0,
+        // dotBgColor: const Color(0x00000000),
+        dotBgColor: Colors.transparent,
+      ),
+    );
 
     return Scaffold(
         appBar: AppBar(
