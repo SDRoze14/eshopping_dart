@@ -7,6 +7,7 @@ class ProductDetails extends StatefulWidget {
   final product_detail_new_price;
   final product_detail_picture;
 
+
   ProductDetails(
       {this.product_detail_name,
       this.product_detail_new_price,
@@ -29,12 +30,6 @@ class _ProductDetailsState extends State<ProductDetails> {
                   MaterialPageRoute(builder: (context) => new HomePage()));
             },
             child: Text('eShopping')),
-        actions: <Widget>[
-          new IconButton(
-            icon: Icon(Icons.shopping_cart),
-            onPressed: () {},
-          )
-        ],
       ),
       body: new ListView(
         children: <Widget>[
@@ -323,6 +318,7 @@ class _Similar_productsState extends State<Similar_products> {
   ];
   @override
   Widget build(BuildContext context) {
+    
     return GridView.builder(
       itemCount: 4,
       primary: false,
@@ -347,11 +343,13 @@ class Similar_Single_prod extends StatelessWidget {
   final prod_old_price;
   final prod_new_price;
 
+
   Similar_Single_prod(
       {this.prod_name,
       this.prod_picture,
       this.prod_old_price,
       this.prod_new_price});
+      
 
   @override
   Widget build(BuildContext context) {

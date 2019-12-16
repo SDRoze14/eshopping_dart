@@ -75,16 +75,21 @@ class Single_prod extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
         child: Hero(
-      tag: prod_name,
+      tag: new Text('Hero 1'),
       child: InkWell(
-        onTap: () => Navigator.of(context).push(
+        onTap: () { 
           // push value product to product detail
+          Navigator.of(context).push(
             new MaterialPageRoute(builder: (context) => new ProductDetails(
               product_detail_name: prod_name,
               product_detail_old_price: prod_old_price,
               product_detail_new_price: prod_new_price,
               product_detail_picture: prod_picture,
-            ))),
+            )));
+
+        
+            },
+
         child: GridTile(
           footer: Container(
             color: Colors.white70,
